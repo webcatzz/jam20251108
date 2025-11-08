@@ -26,7 +26,9 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	if held_item:
-		held_item.look_at(get_local_mouse_position())
+		var angle: float = get_local_mouse_position().angle()
+		held_item.rotation = lerp_angle(held_item.rotation, angle + PI * 0.5, 0.25)
+		held_item.position = held_item.position.lerp(Vector2.from_angle(angle) * 16.0, 0.25)
 
 
 func _unhandled_key_input(event: InputEvent) -> void:

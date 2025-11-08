@@ -1,8 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://du5mqjey212cj"]
+[gd_scene load_steps=3 format=3 uid="uid://du5mqjey212cj"]
 
 [ext_resource type="Texture2D" uid="uid://b3xm55sdybwvl" path="res://items/rebar/rebar.png" id="1_4a30k"]
 
-[node name="Rebar" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4a30k"]
+size = Vector2(50, 10)
+
+[node name="Rebar" type="StaticBody2D"]
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_4a30k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4a30k")
+disabled = true
