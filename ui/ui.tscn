@@ -1,10 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://h0xnfqrlvoan"]
+[gd_scene load_steps=3 format=3 uid="uid://h0xnfqrlvoan"]
 
 [ext_resource type="Script" uid="uid://yuco1eg6gxrc" path="res://ui/ui.gd" id="1_nb4k0"]
+[ext_resource type="PackedScene" uid="uid://5q1dvu2etuw0" path="res://ui/marker/marker.tscn" id="2_ks8t7"]
 
-[node name="UI" type="CanvasLayer"]
+[node name="UI" type="Node"]
 script = ExtResource("1_nb4k0")
 
-[node name="Label" type="Label" parent="."]
+[node name="Overlay" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="Overlay"]
 offset_right = 40.0
 offset_bottom = 23.0
+
+[node name="Marker" parent="." instance=ExtResource("2_ks8t7")]

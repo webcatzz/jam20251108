@@ -32,8 +32,9 @@ func _physics_process(delta: float) -> void:
 func _unhandled_key_input(event: InputEvent) -> void:
 	if event.is_action_pressed(&"ui_accept"):
 		for area: Area2D in interaction_area.get_overlapping_areas():
-			if area is Pile:
-				if area.item_scene:
-					hold_item(area.item_scene.instantiate())
-			elif area is DropOff:
+			if area == Game.current_task.pile:
+				hold_item(area.item_scene.instantiate())
+				Game.current_task.set_state(Task.State.DELIVER)
+			elif area == Game.current_task.dropoff:
 				drop_item()
+				Game.current_task.set_state(Task.State.COMPLETE)

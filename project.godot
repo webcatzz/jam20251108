@@ -19,6 +19,11 @@ config/icon="res://icon.svg"
 
 Game="*res://game/game.tscn"
 
+[global_group]
+
+pile=""
+dropoff=""
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

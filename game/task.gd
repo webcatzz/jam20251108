@@ -2,18 +2,20 @@ class_name Task
 
 signal completed
 
-enum Type {COLLECT, DELIVER}
+enum State {COLLECT, DELIVER, COMPLETE}
 
-var type: Type
-var position: Vector2
+var state: State
+var pile: Pile
+var dropoff: DropOff
 var time: float
 
 
-func _init(type: Type, position: Vector2, time: float) -> void:
-	self.type = type
-	self.position = position
+func _init(pile: Pile, dropoff: DropOff, time: float) -> void:
+	self.pile = pile
+	self.dropoff = dropoff
 	self.time = time
 
 
-func complete() -> void:
-	completed.emit()
+func set_state(value: State) -> void:
+	state = value
+	if state == State.COMPLETE: completed.emit()

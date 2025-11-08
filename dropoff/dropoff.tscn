@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tq05n"]
 size = Vector2(25, 26.5)
 
-[node name="Dropoff" type="Area2D"]
+[node name="Dropoff" type="Area2D" groups=["dropoff"]]
 script = ExtResource("1_86wb0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

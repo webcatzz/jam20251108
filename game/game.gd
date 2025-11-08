@@ -16,4 +16,8 @@ func set_task(task: Task) -> void:
 
 
 func next_task() -> void:
-	set_task(Task.new(Task.Type.COLLECT, Vector2.ZERO, 30.0))
+	set_task(Task.new(
+		get_tree().get_nodes_in_group(&"pile").pick_random(),
+		get_tree().get_nodes_in_group(&"dropoff").pick_random(),
+		30.0
+	))

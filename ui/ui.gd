@@ -1,5 +1,5 @@
-extends CanvasLayer
+extends Node
 
 
 func _process(delta: float) -> void:
-	$Label.text = "%.2fs" % Game.timer.time_left
+	$Overlay/Label.text = "%.2fs" % Game.timer.time_left
