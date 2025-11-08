@@ -6,3 +6,4 @@
 script = ExtResource("1_l1rk1")
 
 [node name="Timer" type="Timer" parent="."]
+one_shot = true
