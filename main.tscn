@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=4 uid="uid://cr1meyj44l3xh"]
+[gd_scene load_steps=6 format=4 uid="uid://cr1meyj44l3xh"]
 
 [ext_resource type="PackedScene" uid="uid://h0xnfqrlvoan" path="res://ui/ui.tscn" id="1_h2yge"]
 [ext_resource type="TileSet" uid="uid://6ywftxnqem7w" path="res://tiles/tileset.tres" id="1_ig7tw"]
-[ext_resource type="Script" uid="uid://caj2l216fa43s" path="res://camera_2d.gd" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://bhti1yrix7ilt" path="res://player/player.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://cjnqn2oydykpr" path="res://pile/pile.tscn" id="4_lquwl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
+size = Vector2(29, 35)
 
 [node name="Main" type="Node2D"]
 
@@ -30,6 +34,12 @@ scroll_scale = Vector2(1.25, 1.25)
 tile_map_data = PackedByteArray("AAD9//z/AgABAAEAAAD+//z/AgADAAAAAAD///z/AgAAAAAAAAAAAPz/AgACAAAAAAAAAP3/AgAAAAEAAAAAAP7/AgADAAEAAAAAAP//AgACAAEAAAD/////AgAAAAAAAAD+////AgAEAAEAAAD9////AgAAAAAAAAD9//v/AgABAAAAAAD+//v/AgACAAEAAAD+//r/AgAAAAEAAAD+//7/AgAAAAEAAAD+//3/AgAAAAEAAAABAP7/AgAAAAAAAAACAP7/AgADAAAAAAACAP//AgABAAEAAAADAP7/AgACAAAAAAADAP//AgACAAEAAAAEAP7/AgABAAAAAAAEAP//AgABAAEAAAAFAP7/AgACAAAAAAAFAP//AgACAAEAAAA=")
 tile_set = ExtResource("1_ig7tw")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(4, 4)
-script = ExtResource("2_0xm2m")
+[node name="Player" parent="." instance=ExtResource("4_1bvp3")]
+position = Vector2(4, -24)
+
+[node name="Pile" parent="." instance=ExtResource("4_lquwl")]
+position = Vector2(44, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pile"]
+position = Vector2(0.5, -17.5)
+shape = SubResource("RectangleShape2D_7mycd")

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjnqn2oydykpr"]
+
+[ext_resource type="Script" uid="uid://cd4j08egowpib" path="res://pile/pile.gd" id="1_ebf4s"]
+
+[node name="Pile" type="Area2D"]
+script = ExtResource("1_ebf4s")
