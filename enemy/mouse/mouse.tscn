@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://0wly7e5cogh1"]
+[gd_scene load_steps=5 format=3 uid="uid://0wly7e5cogh1"]
 
+[ext_resource type="Script" uid="uid://xyie5v61ty7v" path="res://enemy/mouse/mouse.gd" id="1_kd4qb"]
 [ext_resource type="Texture2D" uid="uid://cmbonjf2x1ok1" path="res://enemy/mouse/Mouse.png.png" id="1_m2nv2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kd4qb"]
@@ -16,6 +17,7 @@ animations = [{
 }]
 
 [node name="Mouse" type="StaticBody2D"]
+script = ExtResource("1_kd4qb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_kd4qb")
@@ -24,3 +26,14 @@ shape = SubResource("RectangleShape2D_kd4qb")
 position = Vector2(0, 4.7683716e-07)
 scale = Vector2(0.6875, 0.65625)
 sprite_frames = SubResource("SpriteFrames_ioot2")
+
+[node name="SeedSpawner" type="Timer" parent="."]
+wait_time = 2.5
+autostart = true
+
+[node name="SeedDespawner" type="Timer" parent="."]
+wait_time = 6.0
+autostart = true
+
+[connection signal="timeout" from="SeedSpawner" to="." method="_on_seed_spawner_timeout"]
+[connection signal="timeout" from="SeedDespawner" to="." method="_on_seed_despawner_timeout"]

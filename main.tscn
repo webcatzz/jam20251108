@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://bi5e4s6wmmwse"]
+[gd_scene load_steps=9 format=4 uid="uid://bi5e4s6wmmwse"]
 
 [ext_resource type="PackedScene" uid="uid://h0xnfqrlvoan" path="res://ui/ui.tscn" id="1_h2yge"]
 [ext_resource type="TileSet" uid="uid://6ywftxnqem7w" path="res://tiles/tileset.tres" id="1_ig7tw"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://du5mqjey212cj" path="res://items/rebar/rebar.tscn" id="5_lquwl"]
 [ext_resource type="PackedScene" uid="uid://bjtfgycapubob" path="res://dropoff/dropoff.tscn" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://0wly7e5cogh1" path="res://enemy/mouse/mouse.tscn" id="7_272bh"]
-[ext_resource type="PackedScene" uid="uid://dao2i02sh3v0" path="res://enemy/projectile/seed.tscn" id="8_5vw27"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
 size = Vector2(29, 35)
@@ -54,6 +53,3 @@ position = Vector2(-35, -13)
 
 [node name="Mouse" parent="." instance=ExtResource("7_272bh")]
 position = Vector2(-21, -94)
-
-[node name="Seed" parent="." instance=ExtResource("8_5vw27")]
-position = Vector2(-20, -80)
