@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://xk35isdtiapj" path="res://dropoff/dropoff.gd" id="1_86wb0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tq05n"]
+size = Vector2(25, 26.5)
 
 [node name="Dropoff" type="Area2D"]
 script = ExtResource("1_86wb0")

@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=4 uid="uid://cr1meyj44l3xh"]
+[gd_scene load_steps=8 format=4 uid="uid://bi5e4s6wmmwse"]
 
 [ext_resource type="PackedScene" uid="uid://h0xnfqrlvoan" path="res://ui/ui.tscn" id="1_h2yge"]
 [ext_resource type="TileSet" uid="uid://6ywftxnqem7w" path="res://tiles/tileset.tres" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://bhti1yrix7ilt" path="res://player/player.tscn" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://cjnqn2oydykpr" path="res://pile/pile.tscn" id="4_lquwl"]
 [ext_resource type="PackedScene" uid="uid://du5mqjey212cj" path="res://items/rebar/rebar.tscn" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://bjtfgycapubob" path="res://dropoff/dropoff.tscn" id="6_7mycd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mycd"]
 size = Vector2(29, 35)
@@ -45,3 +46,6 @@ item_scene = ExtResource("5_lquwl")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pile"]
 position = Vector2(0, -17)
 shape = SubResource("RectangleShape2D_7mycd")
+
+[node name="Dropoff" parent="." instance=ExtResource("6_7mycd")]
+position = Vector2(-35, -13)
