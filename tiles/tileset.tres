@@ -1,0 +1,45 @@
+[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://6ywftxnqem7w"]
+
+[ext_resource type="Texture2D" uid="uid://dxskhdufo137u" path="res://tiles/concrete.png" id="1_bruia"]
+[ext_resource type="Texture2D" uid="uid://b0c3aqsvpu8mh" path="res://tiles/light.png" id="2_hm5x3"]
+[ext_resource type="Texture2D" uid="uid://cg0rsbch7np56" path="res://tiles/pipe.png" id="3_r30xe"]
+[ext_resource type="Texture2D" uid="uid://bbiljc1aqdv64" path="res://tiles/mesh.png" id="4_vm1us"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hm5x3"]
+texture = ExtResource("1_bruia")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r30xe"]
+texture = ExtResource("2_hm5x3")
+0:0/animation_columns = 4
+0:0/animation_speed = 15.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vm1us"]
+texture = ExtResource("3_r30xe")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+2:1/0 = 0
+1:1/0 = 0
+4:1/0 = 0
+3:1/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f35we"]
+texture = ExtResource("4_vm1us")
+0:0/0 = 0
+
+[resource]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_hm5x3")
+sources/1 = SubResource("TileSetAtlasSource_r30xe")
+sources/2 = SubResource("TileSetAtlasSource_vm1us")
+sources/3 = SubResource("TileSetAtlasSource_f35we")

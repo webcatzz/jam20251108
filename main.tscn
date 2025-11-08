@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=4 uid="uid://cr1meyj44l3xh"]
+
+[ext_resource type="PackedScene" uid="uid://h0xnfqrlvoan" path="res://ui/ui.tscn" id="1_h2yge"]
+[ext_resource type="TileSet" uid="uid://6ywftxnqem7w" path="res://tiles/tileset.tres" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://caj2l216fa43s" path="res://camera_2d.gd" id="2_0xm2m"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Color" type="ColorRect" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.6392157, 0, 1)
+
+[node name="UI" parent="." instance=ExtResource("1_h2yge")]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAD+/wAAAAAAAAAAAAABAAAAAAAAAAAAAAD9/wAAAAAAAAAAAAD///3/AQAAAAAAAAABAP3/AQAAAAAAAAD9//3/AQAAAAAAAAD///v/AQAAAAAAAAD///r/AQAAAAAAAAAAAPr/AQAAAAAAAAAAAPv/AQAAAAAAAAABAPv/AQAAAAAAAAABAPr/AQAAAAAAAAACAAAAAAAAAAAAAAD7//7/AwAAAAAAAAD6//7/AwAAAAAAAAD6////AwAAAAAAAAD7////AwAAAAAAAAD5////AwAAAAAAAAD5//7/AwAAAAAAAAA=")
+tile_set = ExtResource("1_ig7tw")
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+scroll_scale = Vector2(1.25, 1.25)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Parallax2D"]
+tile_map_data = PackedByteArray("AAD9//z/AgABAAEAAAD+//z/AgADAAAAAAD///z/AgAAAAAAAAAAAPz/AgACAAAAAAAAAP3/AgAAAAEAAAAAAP7/AgADAAEAAAAAAP//AgACAAEAAAD/////AgAAAAAAAAD+////AgAEAAEAAAD9////AgAAAAAAAAD9//v/AgABAAAAAAD+//v/AgACAAEAAAD+//r/AgAAAAEAAAD+//7/AgAAAAEAAAD+//3/AgAAAAEAAAABAP7/AgAAAAAAAAACAP7/AgADAAAAAAACAP//AgABAAEAAAADAP7/AgACAAAAAAADAP//AgACAAEAAAAEAP7/AgABAAAAAAAEAP//AgABAAEAAAAFAP7/AgACAAAAAAAFAP//AgACAAEAAAA=")
+tile_set = ExtResource("1_ig7tw")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+script = ExtResource("2_0xm2m")
