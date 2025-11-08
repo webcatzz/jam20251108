@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dajmikv6hwy1u"
-path="res://.godot/imported/rebar.png-6f9c964785de5b2b96b35ad5883d90c2.ctex"
+uid="uid://b3xm55sdybwvl"
+path="res://.godot/imported/rebar.png-eb10dad6ab3fc11f9b761720b7a0ebbf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://items/rebar.png"
-dest_files=["res://.godot/imported/rebar.png-6f9c964785de5b2b96b35ad5883d90c2.ctex"]
+source_file="res://items/rebar/rebar.png"
+dest_files=["res://.godot/imported/rebar.png-eb10dad6ab3fc11f9b761720b7a0ebbf.ctex"]
 
 [params]
 

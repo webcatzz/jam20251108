@@ -3,12 +3,12 @@ extends CharacterBody2D
 const SPEED = 200.0
 const ACCEL = 0.25
 
-var held_item: Node
+var held_item: Node2D
 
 @onready var interaction_area: Area2D = $InteractionArea
 
 
-func hold_item(item: Node) -> void:
+func hold_item(item: Node2D) -> void:
 	drop_item()
 	held_item = item
 	add_child(item)
@@ -23,6 +23,9 @@ func _physics_process(delta: float) -> void:
 	velocity.x = lerpf(velocity.x, Input.get_axis(&"ui_left", &"ui_right") * 100.0, ACCEL)
 	velocity.y = 100.0
 	move_and_slide()
+	
+	if held_item:
+		held_item.look_at(get_local_mouse_position())
 
 
 func _unhandled_key_input(event: InputEvent) -> void:
