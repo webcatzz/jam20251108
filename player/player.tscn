@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cif6r1bq0x652" path="res://player/Psychic_Dave.png.png" id="2_rkbax"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rkbax"]
-size = Vector2(32, 32)
+size = Vector2(16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g1dw6"]
 animations = [{
@@ -30,8 +30,7 @@ shape = SubResource("RectangleShape2D_rkbax")
 zoom = Vector2(4, 4)
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0.4999993, -0.50000393)
-scale = Vector2(1.78125, 1.8437499)
+scale = Vector2(0.5, 0.518)
 sprite_frames = SubResource("SpriteFrames_g1dw6")
 
 [node name="InteractionArea" type="Area2D" parent="."]
