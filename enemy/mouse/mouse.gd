@@ -8,8 +8,5 @@ const SEED = preload("res://enemy/projectile/seed.tscn")
 func _on_seed_spawner_timeout() -> void:
 	var new_seed = SEED.instantiate()
 	add_child(new_seed)
-	print("seed time")
-
-
-func _on_seed_despawner_timeout() -> void:
-	queue_free()
+	print("get seeded")
+	
