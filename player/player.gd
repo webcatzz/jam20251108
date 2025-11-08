@@ -16,8 +16,8 @@ func hold_item(item: Node2D) -> void:
 
 func drop_item() -> void:
 	if not held_item: return
-	held_item = null
 	held_item.queue_free()
+	held_item = null
 
 
 func _physics_process(delta: float) -> void:
