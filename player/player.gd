@@ -1,11 +1,17 @@
 extends CharacterBody2D
 
 const SPEED = 200.0
-const ACCEL = 0.25
+const ACCEL = 4.0
+
+var direction: float
+var speed: float = 0.0
 
 var held_item: Node2D
 
 @onready var interaction_area: Area2D = $InteractionArea
+
+
+# items
 
 
 func hold_item(item: Node2D) -> void:
@@ -20,9 +26,13 @@ func drop_item() -> void:
 	held_item = null
 
 
+# movements
+
+
 func _physics_process(delta: float) -> void:
-	velocity.x = lerpf(velocity.x, Input.get_axis(&"ui_left", &"ui_right") * 100.0, ACCEL)
-	velocity.y = 100.0
+	direction = lerpf(direction, Input.get_axis(&"left", &"right") * SPEED, ACCEL * delta)
+	velocity.x = direction
+	if not is_on_floor(): velocity.y += 16.0
 	move_and_slide()
 	
 	if held_item:
@@ -31,12 +41,21 @@ func _physics_process(delta: float) -> void:
 		held_item.position = held_item.position.lerp(Vector2.from_angle(angle) * 16.0, 0.25)
 
 
+func jump() -> void:
+	velocity.y = -300.0
+
+
 func _unhandled_key_input(event: InputEvent) -> void:
-	if event.is_action_pressed(&"ui_accept"):
+	if event.is_action_pressed(&"jump"):
+		if is_on_floor():
+			jump()
+	elif event.is_action_pressed(&"interact"):
 		for area: Area2D in interaction_area.get_overlapping_areas():
 			if area == Game.current_task.pile:
 				hold_item(area.item_scene.instantiate())
 				Game.current_task.set_state(Task.State.DELIVER)
+				return
 			elif area == Game.current_task.dropoff:
 				drop_item()
 				Game.current_task.set_state(Task.State.COMPLETE)
+				return

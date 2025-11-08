@@ -11,6 +11,8 @@ radius = 3.0
 height = 10.0
 
 [node name="Seed" type="RigidBody2D"]
+collision_layer = 3
+collision_mask = 3
 physics_material_override = SubResource("PhysicsMaterial_y3oex")
 gravity_scale = 0.1
 
