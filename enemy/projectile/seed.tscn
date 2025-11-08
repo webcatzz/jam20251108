@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dao2i02sh3v0"]
+
+[ext_resource type="Texture2D" uid="uid://b5rqbt0apo2bt" path="res://enemy/projectile/Seed.png.png" id="1_cpd51"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_y3oex"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0vm1i"]
+radius = 3.0
+height = 10.0
+
+[node name="Seed" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_y3oex")
+gravity_scale = 0.1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_0vm1i")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 1)
+scale = Vector2(0.6008301, 0.5209961)
+texture = ExtResource("1_cpd51")
