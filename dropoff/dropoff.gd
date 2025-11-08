@@ -1,3 +1,4 @@
+class_name DropOff
 extends Area2D
 
 
