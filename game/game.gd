@@ -34,8 +34,8 @@ func _on_task_completed() -> void:
 
 
 func take_damage() -> void:
-	timer.start(timer.time_left - 1.0)
+	timer.start(timer.time_left - 4.0)
 
 
 func _on_timer_timeout() -> void:
-	get_tree().quit()
+	get_tree().change_scene_to_file("res://end.tscn")
