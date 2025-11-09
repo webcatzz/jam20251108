@@ -35,7 +35,7 @@ func _on_task_completed() -> void:
 
 func take_damage() -> void:
 	timer.start(timer.time_left - 4.0)
-
+	$Hurt.play()
 
 func _on_timer_timeout() -> void:
 	get_tree().change_scene_to_file("res://end.tscn")
