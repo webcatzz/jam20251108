@@ -71,8 +71,4 @@ animation = &"Spit_Seeds"
 wait_time = 3.0
 autostart = true
 
-[node name="SeedDespawner" type="Timer" parent="."]
-wait_time = 6.0
-autostart = true
-
 [connection signal="timeout" from="SeedSpawner" to="." method="_on_seed_spawner_timeout"]

@@ -5,11 +5,12 @@ const ACCEL = 4.0
 
 var direction: float
 var speed: float = 0.0
-
+var can_jump: bool
 var held_item: Node2D
 
 @onready var interaction_area: Area2D = $InteractionArea
 @onready var play_animation = $Sprite2D
+@onready var coyote_timer: Timer = $CoyoteTimer
 
 # items
 
@@ -36,6 +37,11 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor(): velocity.y += 16.0
 	move_and_slide()
 	
+	if is_on_floor():
+		can_jump = true
+	elif can_jump and coyote_timer.is_stopped():
+		coyote_timer.start()
+	
 	if held_item:
 		var angle: float = get_local_mouse_position().angle()
 		held_item.rotation = lerp_angle(held_item.rotation, angle + PI * 0.5, 0.25)
@@ -46,9 +52,13 @@ func jump() -> void:
 	velocity.y = -300.0
 
 
+func disable_jump() -> void:
+	can_jump = false
+
+
 func _unhandled_key_input(event: InputEvent) -> void:
 	if event.is_action_pressed(&"jump"):
-		if is_on_floor():
+		if can_jump:
 			jump()
 	elif event.is_action_pressed(&"interact"):
 		for area: Area2D in interaction_area.get_overlapping_areas():

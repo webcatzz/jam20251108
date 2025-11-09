@@ -1,14 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bjtfgycapubob"]
+[gd_scene load_steps=2 format=3 uid="uid://bjtfgycapubob"]
 
 [ext_resource type="Script" uid="uid://xk35isdtiapj" path="res://dropoff/dropoff.gd" id="1_86wb0"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tq05n"]
-size = Vector2(25, 26.5)
-
 [node name="Dropoff" type="Area2D" groups=["dropoff"]]
 script = ExtResource("1_86wb0")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -13)
-shape = SubResource("RectangleShape2D_tq05n")
-debug_color = Color(0.73742193, 0.0488469, 0.2789453, 0.41960785)

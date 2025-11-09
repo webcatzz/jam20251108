@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dao2i02sh3v0"]
+[gd_scene load_steps=5 format=3 uid="uid://dao2i02sh3v0"]
 
 [ext_resource type="Texture2D" uid="uid://b5rqbt0apo2bt" path="res://enemy/projectile/Seed.png.png" id="1_cpd51"]
+[ext_resource type="Script" uid="uid://dtaq8v35whpyk" path="res://enemy/projectile/seed.gd" id="1_y3oex"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_y3oex"]
 friction = 0.0
@@ -15,6 +16,9 @@ collision_layer = 3
 collision_mask = 3
 physics_material_override = SubResource("PhysicsMaterial_y3oex")
 gravity_scale = 0.1
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_y3oex")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_0vm1i")
@@ -23,3 +27,10 @@ shape = SubResource("CapsuleShape2D_0vm1i")
 position = Vector2(1, 1)
 scale = Vector2(0.6008301, 0.5209961)
 texture = ExtResource("1_cpd51")
+
+[node name="DespawnTimer" type="Timer" parent="."]
+wait_time = 2.5
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="DespawnTimer" to="." method="queue_free"]
