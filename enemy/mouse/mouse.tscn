@@ -1,18 +1,49 @@
-[gd_scene load_steps=5 format=3 uid="uid://0wly7e5cogh1"]
+[gd_scene load_steps=9 format=3 uid="uid://0wly7e5cogh1"]
 
 [ext_resource type="Script" uid="uid://xyie5v61ty7v" path="res://enemy/mouse/mouse.gd" id="1_kd4qb"]
-[ext_resource type="Texture2D" uid="uid://cmbonjf2x1ok1" path="res://enemy/mouse/Mouse.png.png" id="1_m2nv2"]
+[ext_resource type="Texture2D" uid="uid://p6n04bw40eu2" path="res://enemy/mouse/mouse_spritesheet.png" id="2_kd4qb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kd4qb"]
+size = Vector2(20, 14)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ioot2"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ioot2"]
+atlas = ExtResource("2_kd4qb")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ia31r"]
+atlas = ExtResource("2_kd4qb")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fnxqs"]
+atlas = ExtResource("2_kd4qb")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kd4qb"]
+atlas = ExtResource("2_kd4qb")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_50mwo"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_m2nv2")
+"texture": SubResource("AtlasTexture_ioot2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ia31r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fnxqs")
 }],
 "loop": true,
-"name": &"default",
+"name": &"Spit_Seeds",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kd4qb")
+}],
+"loop": false,
+"name": &"Static",
 "speed": 5.0
 }]
 
@@ -20,12 +51,14 @@ animations = [{
 script = ExtResource("1_kd4qb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
 shape = SubResource("RectangleShape2D_kd4qb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, 4.7683716e-07)
-scale = Vector2(0.6875, 0.65625)
-sprite_frames = SubResource("SpriteFrames_ioot2")
+position = Vector2(0, -5.9604645e-08)
+scale = Vector2(0.6875, 0.640625)
+sprite_frames = SubResource("SpriteFrames_50mwo")
+animation = &"Static"
 
 [node name="SeedSpawner" type="Timer" parent="."]
 wait_time = 2.5

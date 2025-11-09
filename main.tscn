@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://cr1meyj44l3xh"]
+[gd_scene load_steps=9 format=4 uid="uid://bi5e4s6wmmwse"]
 
 [ext_resource type="PackedScene" uid="uid://h0xnfqrlvoan" path="res://ui/ui.tscn" id="1_h2yge"]
 [ext_resource type="TileSet" uid="uid://6ywftxnqem7w" path="res://tiles/tileset.tres" id="1_ig7tw"]
@@ -66,4 +66,4 @@ shape = SubResource("RectangleShape2D_7mycd")
 position = Vector2(-55, 127)
 
 [node name="Mouse" parent="." instance=ExtResource("7_272bh")]
-position = Vector2(-21, -94)
+position = Vector2(-42, -60)
