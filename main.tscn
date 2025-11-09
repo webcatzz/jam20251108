@@ -126,6 +126,9 @@ position = Vector2(55, 3)
 [node name="Opossum" parent="Enemies" instance=ExtResource("8_5vw27")]
 position = Vector2(105, 124)
 
+[node name="Mouse3" parent="Enemies" instance=ExtResource("7_272bh")]
+position = Vector2(307, 21)
+
 [node name="Player" parent="." instance=ExtResource("4_1bvp3")]
 position = Vector2(4, -24)
 
