@@ -29,7 +29,7 @@ scale = Vector2(0.6008301, 0.5209961)
 texture = ExtResource("1_cpd51")
 
 [node name="DespawnTimer" type="Timer" parent="."]
-wait_time = 2.5
+wait_time = 3.0
 autostart = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

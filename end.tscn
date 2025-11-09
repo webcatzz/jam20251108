@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkios2exbt4g4"]
+
+[ext_resource type="Script" uid="uid://i7iforv7jyxt" path="res://end.gd" id="1_n735c"]
+
+[node name="End" type="Node"]
+script = ExtResource("1_n735c")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "out of time :("
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "%d tasks completed"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "ok nice"
+horizontal_alignment = 1

@@ -19,10 +19,12 @@ func set_task(task: Task) -> void:
 
 
 func next_task() -> void:
+	var pile: Pile = get_tree().get_nodes_in_group(&"pile").pick_random()
+	var dropoff: DropOff = get_tree().get_nodes_in_group(&"dropoff").pick_random()
 	set_task(Task.new(
-		get_tree().get_nodes_in_group(&"pile").pick_random(),
-		get_tree().get_nodes_in_group(&"dropoff").pick_random(),
-		TIME_CURVE.sample(tasks_completed)
+		pile,
+		dropoff,
+		TIME_CURVE.sample(tasks_completed) + 0.001 * pile.global_position.distance_to(dropoff.global_position)
 	))
 
 
@@ -33,3 +35,7 @@ func _on_task_completed() -> void:
 
 func take_damage() -> void:
 	timer.start(timer.time_left - 1.0)
+
+
+func _on_timer_timeout() -> void:
+	get_tree().quit()
