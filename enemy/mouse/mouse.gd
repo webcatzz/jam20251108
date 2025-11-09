@@ -13,7 +13,6 @@ func _ready():
 func _on_seed_spawner_timeout() -> void:
 	play_animation.play("Spit_Seeds")
 	get_tree().get_first_node_in_group("player")
-	var direction = global_position.direction_to(player.global_position)
 	var new_seed = SEED.instantiate()
 	add_child(new_seed)
 	print("get seeded")

@@ -1,0 +1,64 @@
+[gd_scene load_steps=9 format=3 uid="uid://cujm0mgir33t7"]
+
+[ext_resource type="Texture2D" uid="uid://c8iwd44lqo8ay" path="res://enemy/opossum/Opossum_spritesheet.png" id="1_0il1s"]
+[ext_resource type="Script" uid="uid://csed2t8uyv1at" path="res://enemy/opossum/opossum.gd" id="1_g1ikc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g1ikc"]
+size = Vector2(21.5, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jqdjn"]
+atlas = ExtResource("1_0il1s")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y23k1"]
+atlas = ExtResource("1_0il1s")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3cquq"]
+atlas = ExtResource("1_0il1s")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcyb4"]
+atlas = ExtResource("1_0il1s")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4gwtq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jqdjn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y23k1")
+}],
+"loop": true,
+"name": &"Walk_Left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3cquq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vcyb4")
+}],
+"loop": true,
+"name": &"Walk_Right",
+"speed": 5.0
+}]
+
+[node name="Opossum" type="Area2D"]
+script = ExtResource("1_g1ikc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.25, 0)
+shape = SubResource("RectangleShape2D_g1ikc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-4.7683716e-07, 0)
+scale = Vector2(0.734375, 0.71875006)
+sprite_frames = SubResource("SpriteFrames_4gwtq")
+animation = &"Walk_Left"
+frame_progress = 0.63956225
+
+[node name="Timer" type="Timer" parent="."]

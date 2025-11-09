@@ -68,7 +68,7 @@ sprite_frames = SubResource("SpriteFrames_50mwo")
 animation = &"Spit_Seeds"
 
 [node name="SeedSpawner" type="Timer" parent="."]
-wait_time = 2.5
+wait_time = 3.0
 autostart = true
 
 [node name="SeedDespawner" type="Timer" parent="."]
