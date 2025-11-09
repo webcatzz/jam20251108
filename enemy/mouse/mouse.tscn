@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://0wly7e5cogh1"]
+[gd_scene load_steps=10 format=3 uid="uid://0wly7e5cogh1"]
 
 [ext_resource type="Script" uid="uid://xyie5v61ty7v" path="res://enemy/mouse/mouse.gd" id="1_kd4qb"]
 [ext_resource type="Texture2D" uid="uid://p6n04bw40eu2" path="res://enemy/mouse/mouse_spritesheet.png" id="2_kd4qb"]
@@ -18,6 +18,10 @@ region = Rect2(32, 0, 32, 32)
 atlas = ExtResource("2_kd4qb")
 region = Rect2(0, 32, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_50mwo"]
+atlas = ExtResource("2_kd4qb")
+region = Rect2(0, 0, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_kd4qb"]
 atlas = ExtResource("2_kd4qb")
 region = Rect2(0, 0, 32, 32)
@@ -33,8 +37,11 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fnxqs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_50mwo")
 }],
-"loop": true,
+"loop": false,
 "name": &"Spit_Seeds",
 "speed": 5.0
 }, {
@@ -42,7 +49,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kd4qb")
 }],
-"loop": false,
+"loop": true,
 "name": &"Static",
 "speed": 5.0
 }]
@@ -58,7 +65,7 @@ shape = SubResource("RectangleShape2D_kd4qb")
 position = Vector2(0, -5.9604645e-08)
 scale = Vector2(0.6875, 0.640625)
 sprite_frames = SubResource("SpriteFrames_50mwo")
-animation = &"Static"
+animation = &"Spit_Seeds"
 
 [node name="SeedSpawner" type="Timer" parent="."]
 wait_time = 2.5

@@ -23,6 +23,7 @@ Game="*res://game/game.tscn"
 
 pile=""
 dropoff=""
+player="for aimin'"
 
 [input]
 

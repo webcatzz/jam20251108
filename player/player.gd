@@ -9,7 +9,7 @@ var speed: float = 0.0
 var held_item: Node2D
 
 @onready var interaction_area: Area2D = $InteractionArea
-
+@onready var play_animation = $Sprite2D
 
 # items
 
@@ -32,6 +32,7 @@ func drop_item() -> void:
 func _physics_process(delta: float) -> void:
 	direction = lerpf(direction, Input.get_axis(&"left", &"right") * SPEED, ACCEL * delta)
 	velocity.x = direction
+	play_animation.play("Walking")
 	if not is_on_floor(): velocity.y += 16.0
 	move_and_slide()
 	
