@@ -59,6 +59,11 @@ position = Vector2(-4.7683716e-07, 0)
 scale = Vector2(0.734375, 0.71875006)
 sprite_frames = SubResource("SpriteFrames_4gwtq")
 animation = &"Walk_Left"
-frame_progress = 0.63956225
+frame_progress = 0.2071099
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

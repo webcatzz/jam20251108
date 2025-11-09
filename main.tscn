@@ -20,6 +20,7 @@ size = Vector2(48, 16)
 size = Vector2(32, 16)
 
 [node name="Main" type="Node2D"]
+position = Vector2(1, -1)
 
 [node name="Background" type="CanvasLayer" parent="."]
 layer = -1
@@ -123,7 +124,7 @@ position = Vector2(-71, -147)
 position = Vector2(55, 3)
 
 [node name="Opossum" parent="Enemies" instance=ExtResource("8_5vw27")]
-position = Vector2(77, 123)
+position = Vector2(105, 124)
 
 [node name="Player" parent="." instance=ExtResource("4_1bvp3")]
 position = Vector2(4, -24)
