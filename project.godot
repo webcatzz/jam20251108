@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="jam20251108"
+config/name="Working Man"
 run/main_scene="uid://bi5e4s6wmmwse"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
